@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 public class App
 {
     public static void main(String[] args)
@@ -69,7 +69,7 @@ public class App
                 }
 
                 case 0:
-                System.out.println("Extiting......... ");
+                System.out.println("Exiting......... ");
                     break;
                     
 
