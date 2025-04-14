@@ -40,8 +40,8 @@ public class Student {
             this.gpa = 0.0;
         }
 
-        if (gpa < 0.0 || gpa > 4.0) {
-            throw new InvalidGPAException("GPA must be between 0.0 and 4.0!");
+        if (gpa < 0.0 || gpa > 5.0) {
+            throw new InvalidGPAException("GPA must be between 0.0 and 5.0!");
         }
     }
 
