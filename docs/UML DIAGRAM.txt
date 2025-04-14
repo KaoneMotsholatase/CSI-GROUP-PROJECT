@@ -1,0 +1,56 @@
++------------------------------+
+|          Student            |
++------------------------------+
+| - studentID: String         |
+| - name: String              |
+| - gpa: double               |
+| - courses: ArrayList<Course>|
++------------------------------+
+| + Student(id, name)         |
+| + getStudentID(): String    |
+| + getName(): String         |
+| + getGPA(): double          |
+| + calculateGPA(): void      |
+| + addCourse(Course): void   |
+| + display(): void           |
+| + toString(): String        |
++------------------------------+
+             |
+             | 1
+             |
+             |------------------------------+
+             |                              |
+             v                              | 0..*
++------------------------------+            |
+|           Course             |<-----------+
++------------------------------+
+| - courseCode: String         |
+| - courseName: String         |
+| - creditHours: int           |
+| - finalGrade: double         |
++------------------------------+
+| + Course(code, name, credits, grade)      |
+| + setFinalGrade(double): void             |
+| + getCourseCode(): String                 |
+| + getCourseName(): String                 |
+| + getCreditHours(): int                   |
+| + getFinalGrade(): double                 |
+| + toString(): String                      |
++------------------------------+
+             ^
+             |
+             | throws
++------------------------------+
+|  InvalidGradeException       |
++------------------------------+
+| + InvalidGradeException(msg)|
++------------------------------+
+
++------------------------------+
+|  InvalidGPAException         |
++------------------------------+
+| + InvalidGPAException(msg)  |
++------------------------------+
+       ^
+       |
+       | thrown by Student.calculateGPA()
