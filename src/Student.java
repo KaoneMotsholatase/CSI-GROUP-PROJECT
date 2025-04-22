@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 
 public class Student {
-    private String studentID;
+    private int studentID;
     private String name;
     private double gpa;
     private ArrayList<Course> courses;
 
-    public Student(String studentID, String name) {
+    public Student(int studentID, String name,double gpa) {
         this.studentID = studentID;
         this.name = name;
-        this.gpa = 0.0;
+        this.gpa = gpa;
         this.courses = new ArrayList<>();
     }
 
-    public String getStudentID() {
+    public int getStudentID() {
         return studentID;
     }
 
