@@ -1,5 +1,5 @@
-public class InvalidGPAException extends Exception{
-    public InvalidGPAException(String message){
+public class InvalidGradeException extends Exception{
+    public InvalidGradeException(String message){
         super(message);
     }
 }
