@@ -25,6 +25,7 @@ public class Student {
         return gpa;
     }
 
+    //method to calculate the GPA
     public void calculateGPA() throws InvalidGPAException {
         double totalPoints = 0.0;
         int totalCredits = 0;
@@ -45,6 +46,7 @@ public class Student {
         }
     }
 
+    //method to add a Course
     public void addCourse(Course course) {
         courses.add(course);
     }
@@ -58,7 +60,7 @@ public class Student {
              + "Courses Enrolled: " + courses.size();
     }
 
-    // display method
+    // display method to diplay all info for Students and courses they do
     public void display() {
         System.out.println(toString());
         System.out.println("Course Details:");
@@ -66,4 +68,37 @@ public class Student {
             System.out.println(" - " + c.toString());
         }
     }
+
+    //sort based on Student ID
+    public static void selectionSort(Student[] arr) {
+         for (int i = 0; i < arr.length - 1; i++) {
+             int minIndex = i;
+             for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j].getStudentID() < arr[minIndex].getStudentID()) {
+              minIndex = j;
+                }
+            }
+            
+            Student temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+         }     
+   }  
+
+   //sort based on Student ID
+    public static void selectionSort(Student[] arr) {
+         for (int i = 0; i < arr.length - 1; i++) {
+             int minIndex = i;
+             for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j].getStudentID() < arr[minIndex].getStudentID()) {
+              minIndex = j;
+                }
+            }
+            
+            Student temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+         }     
+   }  
+
 }
