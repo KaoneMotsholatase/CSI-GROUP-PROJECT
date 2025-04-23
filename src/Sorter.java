@@ -18,8 +18,8 @@ public class Sorter{
    } 
   
   //sort based on GPA
-  public static void insertionSort(Student[] arr, int size) {
-        for (int i = 1; i < size; i++) {
+  public static void insertionSort(Student[] arr) {
+        for (int i = 1; i < arr.length; i++) {
             Student key = arr[i];
             int j = i - 1;
             while (j >= 0 && arr[j].getGpa() > key.getGpa()) {
