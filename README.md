@@ -72,6 +72,44 @@ CSI-GROUP-PROJECT/
 -  GitHub repo setup and working
 -  Course and student logic working with `App` and `Main`
 -  Documentation and UML added
+-  
+🧠 Week 2 Deliverables
+Implemented sorting and searching utilities
+
+Added test classes to validate functionality
+
+Menu updated in App.java to support sorting/searching
+
+🔷 Sorter.java
+Developed by Priscillah Matshelo Kgotlayame(201702204)
+
+Contains:
+
+selectionSort() — Sorts students by ID
+
+insertionSort() — Sorts students by GPA
+
+🔷 SearchUtils.java
+Developed by Kaone  Motsholatase(202401125)
+
+Provides searching methods:
+
+searchByID() – Finds student by Student ID
+
+searchByName() – Finds student by name
+
+🔷 Test Classes
+Developed by Kaone Motsholatase(202401125)
+
+Includes:
+
+TestSort.java – Tests sorting functionality
+
+TestSearch.java – Tests search utilities
+
+🔷 App.java (Updated)
+Modified by Kevin
+
 
 
 
