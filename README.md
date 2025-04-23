@@ -74,10 +74,9 @@ CSI-GROUP-PROJECT/
 -  Documentation and UML added
 -  
 🧠 Week 2 Deliverables
+
 Implemented sorting and searching utilities
-
 Added test classes to validate functionality
-
 Menu updated in App.java to support sorting/searching
 
 🔷 Sorter.java
@@ -108,7 +107,7 @@ TestSort.java – Tests sorting functionality
 TestSearch.java – Tests search utilities
 
 🔷 App.java (Updated)
-Modified by Kevin
+Modified by Kevin Lekgoa(202403979)
 
 
 
