@@ -75,11 +75,19 @@ CSI-GROUP-PROJECT/
 -  
 🧠 Week 2 Deliverables
 
+
 Implemented sorting and searching utilities
+
+
 Added test classes to validate functionality
+
+
 Menu updated in App.java to support sorting/searching
 
+
 🔷 Sorter.java
+
+
 Developed by Priscillah Matshelo Kgotlayame(201702204)
 
 Contains:
