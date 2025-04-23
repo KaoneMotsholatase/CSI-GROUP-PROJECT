@@ -3,14 +3,16 @@ public class App
 {
     public static void main(String[] args)
     {
+        /////////////////////////////////////////////////////////////
         Scanner in = new Scanner(System.in);
-
-        //////////////////////
+        ArrayList<Course> courses = new ArrayList<>();
+        ArrayList<Student> students = new ArrayList<>();
+       //////////////////////////////////////////////
         String courseName="";
         String courseCode="";
         int creditHours=0;
         double finalGrade=0.0;
-        //////////////////////
+        /////////////////////////////////
         String studentName="";
         int studentId=0;
         double studentGPA=0;
@@ -70,11 +72,22 @@ public class App
                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 5:
                 try {
+
+
                     Course course = new Course(courseCode, courseName, creditHours, finalGrade);
                     System.out.println(">=======================================================<");
+
+
+
+
                     System.out.println(course.toString());
-                    Student student = new Student(studentId,studentName,studentGPA);
-                    System.out.println(student.toString());
+                    for(Student student:students)
+                    {
+                        System.out.println(student.toString());
+                        System.out.println("/=======================================================\\");
+                    }
+
+
                     System.out.println(">=======================================================<");
                     } 
                 catch (InvalidGradeException e) 
@@ -89,6 +102,7 @@ public class App
                     System.out.println("1.Student id");
                     System.out.println("2. student name");
                     System.out.println("3. student gpa");
+                    System.out.println("4. Add Student");
                     System.out.println("-1. Exit");
                     detailAns = in.nextInt();
 
@@ -111,12 +125,23 @@ public class App
                         studentGPA = in.nextDouble();
                         System.out.println("You entered: " + studentGPA);
                     }
+
+                    if(detailAns==4)
+                    {
+                        System.out.println("Student Details entered==> "+ studentId +"  "+ studentName + "  " + studentGPA); 
+                        Student student = new Student(studentId,studentName,studentGPA);
+                        students.add(new Student(studentId, studentName, studentGPA));
+                    }
+
                     if(detailAns==-1)
                     {
-                         System.out.println("Student Details entered==> "+ studentId +"  "+ studentName + "  " + studentGPA);
+                         System.out.println("<<<<<<<<--Students Added to System-->>>>>>>");
                         }
                   }
                   while(detailAns!=-1);
+
+                  
+                  
                   break;
                   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 0:
