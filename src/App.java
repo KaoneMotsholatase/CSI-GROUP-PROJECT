@@ -22,12 +22,10 @@ public class App
         do{
             
             System.out.println("======================Choose your options============================");
-            System.out.println("1.Course code");
-            System.out.println("2.Course name");
-            System.out.println("3.Credit hours");
-            System.out.println("4.Final grade");
-            System.out.println("5.Display All");
-            System.out.println("6.Enter student details");
+            
+            System.out.println("1) Course Details");
+            System.out.println("2) Student Details");
+            System.out.println("3) Display All");
             System.out.println("0. Exit");
             option = in.nextInt();
             in.nextLine();
@@ -37,65 +35,87 @@ public class App
 
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 1:
-                    
-                System.out.println("Enter course code");
-                courseCode = in.nextLine();
-                System.out.println("you entered "+courseCode);
+                
+                int courseOptions;
+                do{
 
-                break;
-                
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                case 2:
-                
-                System.out.println("Enter course name");
-                courseName = in.nextLine();
-                
-                System.out.println("you entered "+courseName);
-                    
-                 break;
+                    System.out.println("==============Enter Course details===============");
 
-                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    System.out.println("1.Course code");
+                    System.out.println("2.Course name");
+                    System.out.println("3.Credit hours");
+                    System.out.println("4.Final grade");
+                    System.out.println("5.Add Enteres Details");
+                    System.out.println("-1. Exit");
+
+                    courseOptions = in.nextInt();
+                try{
+                    if(courseOptions==1)
+                    {
+                     System.out.println("Enter course code");
+                     courseCode = in.next();
+                     System.out.println("you entered "+courseCode);
+                    }
+
+                    if(courseOptions==2)
+                    {
+                      System.out.println("Enter course name");
+                      courseName = in.next();
+                      System.out.println("you entered "+courseName);
+                    }
+                    
+                    if(courseOptions==3)
+                    {
+                        System.out.println("Enter credit hours");
+                        creditHours = in.nextInt();
+                        System.out.println("you entered "+creditHours);
+                    }
+
+                    
+                    if(courseOptions==4)
+                    {
+                        System.out.println("Enter final grade");
+                        finalGrade = in.nextDouble(); 
+                        System.out.println("you entered "+finalGrade); 
+                    }
+                    
+                    if(courseOptions==5)
+                    {
+                        System.out.println("Course details Details entered==> "+ courseCode +"  "+ courseName + "  " + creditHours + " " + finalGrade ); 
+                        Course course = new Course(courseCode,courseName,creditHours,finalGrade);
+                        courses.add(new Course(courseCode,courseName,creditHours,finalGrade));
+                    }
+                   }
+                    catch(InvalidGradeException e){ System.err.println("Error: " + e.getMessage());}
+
+                    if(courseOptions==-1)
+                    {
+                         System.out.println("<<<<<<<<--------Course Details Added to System------------>>>>>>>");
+                        }
+
+                  }
+                     while(courseOptions!=-1);
+
+                     break;                
+                
+                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 3:
 
-                System.out.println("Enter credit hours");
-                creditHours = in.nextInt();
-                System.out.println("you entered "+creditHours);
-
-                break;
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                case 4:
-                System.out.println("Enter final grade");
-                 finalGrade = in.nextDouble(); 
-                 System.out.println("you entered "+finalGrade);
-
-                 break;
-                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                case 5:
-                try {
-
-
-                    Course course = new Course(courseCode, courseName, creditHours, finalGrade);
                     System.out.println(">=======================================================<");
 
-
-
-
-                    System.out.println(course.toString());
                     for(Student student:students)
                     {
+                        int count=0;
+                        Course currentStudent = courses.get(count);
+                        System.out.println(currentStudent.toString());
                         System.out.println(student.toString());
                         System.out.println("/=======================================================\\");
                     }
 
-
                     System.out.println(">=======================================================<");
-                    } 
-                catch (InvalidGradeException e) 
-                {
-                    System.err.println("Error: " + e.getMessage());
-                }
+                     
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                case 6:
+                case 2:
                 int detailAns;
                 do{
                     System.out.println("==============Enter Student details===============");
@@ -138,10 +158,7 @@ public class App
                          System.out.println("<<<<<<<<--Students Added to System-->>>>>>>");
                         }
                   }
-                  while(detailAns!=-1);
-
-                  
-                  
+                  while(detailAns!=-1);                  
                   break;
                   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 0:
