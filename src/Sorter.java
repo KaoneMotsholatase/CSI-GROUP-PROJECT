@@ -22,7 +22,7 @@ public class Sorter{
         for (int i = 1; i < arr.length; i++) {
             Student key = arr[i];
             int j = i - 1;
-            while (j >= 0 && arr[j].getGpa() > key.getGpa()) {
+            while (j >= 0 && arr[j].getGPA() > key.getGPA()) {
                 arr[j + 1] = arr[j];
                 j--;
             }
