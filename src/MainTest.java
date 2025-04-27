@@ -7,19 +7,19 @@ public class MainTest {
         // Creating a list of students
         List<Student> studentsList = new ArrayList<>();
 
-        Student s1 = new Student(1001, "Lone", 0);
+        Student s1 = new Student(1001, "Lone");
         s1.addCourse(new Course("OOP", "CSI142", 3, 89.5));
         s1.addCourse(new Course("Math", "MAT111", 3, 76.0));
 
-        Student s2 = new Student(1002, "Aminah", 0);
+        Student s2 = new Student(1002, "Aminah");
         s2.addCourse(new Course("Networks", "NET202", 4, 84.0));
         s2.addCourse(new Course("Databases", "DB203", 3, 91.0));
 
-        Student s3 = new Student(1003, "Bonang", 0);
+        Student s3 = new Student(1003, "Bonang");
         s3.addCourse(new Course("Programming", "CSI41", 3, 70.0));
         s3.addCourse(new Course("Systems", "SYS104", 3, 65.5));
 
-        Student s4 = new Student(1004, "Thobo", 0);
+        Student s4 = new Student(1004, "Thobo");
         s4.addCourse(new Course("Web Dev", "WEB203", 3, 88.0));
         s4.addCourse(new Course("AI", "AI302", 3, 92.0));
 
@@ -69,8 +69,8 @@ public class MainTest {
         }
 
         // Demonstrating Linear Search by name
-        System.out.println("\nLinear Search for 'Amina':");
-        Student foundByName = SearchUtils.linearSearchByName(studentsArray, "Amina");
+        System.out.println("\nLinear Search for 'Aminah':");
+        Student foundByName = SearchUtils.linearSearchByName(studentsArray, "Aminah");
         if (foundByName != null) {
             foundByName.display();
         } else {
