@@ -7,10 +7,10 @@ public class Student {
     private double gpa;
     private List<Course> courses;
 
-    public Student(int studentID, String name,double gpa) {
+    public Student(int studentID, String name) {
         this.studentID = studentID;
         this.name = name;
-        this.gpa = gpa;
+        this.gpa = 0.0;   //Initially 0.0
         this.courses = new ArrayList<>();
     }
 
@@ -23,6 +23,11 @@ public class Student {
     }
 
     public double getGPA() {
+        try{
+            calculateGPA();
+        }catch (InvalidGPAException e) {
+                System.out.println(e.getMessage());
+        }
         return gpa;
     }
 
