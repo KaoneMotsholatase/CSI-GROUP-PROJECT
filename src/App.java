@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.Arrays;
+
 public class App
 {
     public static void main(String[] args)
@@ -26,6 +28,9 @@ public class App
             System.out.println("1) Course Details");
             System.out.println("2) Student Details");
             System.out.println("3) Display All");
+            System.out.println("4) Sort Students");
+            System.out.println("5) Search 4 student");
+            
             System.out.println("0. Exit");
             option = in.nextInt();
             in.nextLine();
@@ -103,12 +108,10 @@ public class App
 
                     System.out.println(">=======================================================<");
 
+                    int count=0;
                     for(Student student:students)
                     {
-                        int count=0;
-                        Course currentStudent = courses.get(count);
-                        System.out.println(currentStudent.toString());
-                        System.out.println(student.toString());
+                       student.display();
                         System.out.println("/=======================================================\\");
                     }
 
@@ -159,6 +162,119 @@ public class App
                         }
                   }
                   while(detailAns!=-1);                  
+                  break;
+
+                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+                  case 4:
+                  int sortOption;
+                  do{
+
+                    System.out.println("==============Choose how to Sort===============");
+
+                    System.out.println("current list: ");
+                    for(Student x : students)
+                    {
+                    System.out.println(x.getStudentID() + " - " + x.getName());
+                    }
+
+                    System.out.println("1.Sort by Student Id(Selection Sort)");
+                    System.out.println("2.Sort by GPA(insertion Sort)");
+                    //System.out.println("3.Display Sorted list");
+                    System.out.println("-1.Exit");
+                    
+                    sortOption=in.nextInt();
+
+                    Student[] studentsArray = students.toArray(new Student[0]);
+
+                   if(sortOption==1)
+                   { 
+                    System.out.println("Sorting........Sorting.............Done!!!");
+                    Sorter.selectionSort(students.toArray(new Student[0]));
+
+                    students = new ArrayList<>(Arrays.asList(studentsArray));
+
+                    System.out.println("\n======Done Sorting by Student ID======");
+                   }
+                    
+                    if(sortOption==2)
+                    {
+                    System.out.println("Sorting........Sorting.............Done!!!");
+
+                    Sorter.insertionSort(students.toArray(new Student[0]));
+                    students = new ArrayList<>(Arrays.asList(studentsArray));
+
+                    System.out.println("\n======Done Sorting by GPA======");
+                    }
+
+                    /* 
+                    if(sortOption==3)
+                    {
+                        for (Student s : students) 
+                        {
+                        System.out.println(s.getStudentID() + " - " + s.getName());
+                        }
+                    }
+                        */
+                    System.out.println("<================Sorted Details Added to System============>");
+                    }
+                    while(sortOption!=-1);
+                  break;
+                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+                  
+                  case 5:
+                  System.out.println("Choose Search option");
+                  int searchOption;
+                  do
+                  {
+                    System.out.println("1. Search by name");
+                    System.out.println("2. search by Student Id");
+                    System.out.println("-1. Exits");
+                    searchOption=in.nextInt();
+
+                    if(searchOption==1)
+                    {
+                        String searchTarget;
+                        System.out.println("Enter name to be checked");
+                        searchTarget = in.next();
+
+                        System.out.println("searching........searching.............Done!!!");
+
+                        Student resultByName = SearchUtils.linearSearchByName(students.toArray(new Student[0]), searchTarget);
+
+                        if (resultByName != null) 
+                        {
+                        System.out.println("Student name of " + resultByName.getName() + " is present in the system");
+                        } 
+                        else 
+                        {
+                         System.out.println("Student named "+ searchTarget + "was not found in the System.");
+                        }
+
+                    }
+                    if(searchOption==2)
+                    {
+                        int searchTarget2;
+                        System.out.println("Enter ID to be found");
+                        searchTarget2 = in.nextInt();
+
+                        System.out.println("searching........searching.............Done!!!");
+
+                        Student resultByName = SearchUtils.binarySearchByID(students.toArray(new Student[0]), searchTarget2);
+
+                        if (resultByName != null) 
+                        {
+                        System.out.println("Id present in system: " + resultByName.getName());
+                        } 
+                        else 
+                        {
+                         System.out.println("The Id entred "+ searchTarget2 + " was not found in system.");
+                        }
+                    }
+
+
+                  }
+                  while(searchOption != -1);
+
                   break;
                   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 case 0:
