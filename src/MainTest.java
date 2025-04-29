@@ -7,6 +7,8 @@ public class MainTest {
         // Creating a list of students
         List<Student> studentsList = new ArrayList<>();
 
+        try{
+
         Student s1 = new Student(1001, "Lone");
         s1.addCourse(new Course("OOP", "CSI142", 3, 89.5));
         s1.addCourse(new Course("Math", "MAT111", 3, 76.0));
@@ -28,13 +30,8 @@ public class MainTest {
         studentsList.add(s3);
         studentsList.add(s4);
 
-        // Calculating GPA for each student
-        for (Student student : studentsList) {
-            try {
-                student.calculateGPA();
-            } catch (InvalidGPAException e) {
-                System.err.println("Error calculating GPA: " + e.getMessage());
-            }
+        }catch(InvalidGradeException e) {
+            System.err.println(e.getMessage());
         }
 
         // Converting list to array for sorting/searching
