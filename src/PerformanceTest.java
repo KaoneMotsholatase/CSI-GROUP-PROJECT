@@ -38,7 +38,7 @@ public class PerformanceTest {
     public static Student[] generateStudents(int n) {
         Student[] students = new Student[n];
         for (int i = 0; i < n; i++) {
-            students[i] = new Student(i, "Student" + i, Math.random() * 5);
+            students[i] = new Student(i, "Student" + i);
         }
         return students;
     }
